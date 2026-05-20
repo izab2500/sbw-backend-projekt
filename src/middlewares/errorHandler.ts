@@ -1,6 +1,14 @@
 import { AppError } from "../utils/AppError.js";
 import type { Response, Request, NextFunction } from "express";
 
+/**
+ * 
+ * Globalt middleware för applikationens felhantering 
+ * och hanterar samt loggar följande fel:
+ * 1. System
+ * 2. Programmer
+ * 3. Operational
+ */
 export function errorHandler(err: unknown, req: Request, res: Response, _next: NextFunction) {
     // Unexpected/programmers errors
     if (!(err instanceof AppError)) {
