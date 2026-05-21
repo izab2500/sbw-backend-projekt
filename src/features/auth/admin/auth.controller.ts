@@ -2,8 +2,6 @@ import type { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import * as authServices from "./auth.service.js";
 
-
-
 /**
  * 
  * Loggar in admin och skapar JWT token.

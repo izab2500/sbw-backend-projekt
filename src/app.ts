@@ -2,6 +2,7 @@ import express, { json, urlencoded } from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import authRouter from "./features/auth/admin/auth.route.js";
+import menuItemRouter from "./features/menu/menu.route.js";
 import { notFound } from "./middlewares/notFound.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 
@@ -18,6 +19,7 @@ app.use(urlencoded({ extended: true }));
 
 // Rutter
 app.use("/api/v1/auth/admin", authRouter);
+app.use("/api/v1/menu", menuItemRouter);
 
 // Not found 404
 app.use(notFound);
